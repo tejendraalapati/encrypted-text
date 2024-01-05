@@ -1,0 +1,20 @@
+<!-- cryptoapp/templates/encrypt.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypt Text</title>
+</head>
+<body>
+    <h2>Encrypt Text</h2>
+    <form method="post" action="{% url 'encrypt' %}">
+        {% csrf_token %}
+        <label for="plain_text">Enter Text:</label>
+        <textarea name="plain_text" required></textarea>
+        <br>
+        <button type="submit">Encrypt</button>
+    </form>
+    <p><a href="{% url 'home' %}">Back to Home</a></p>
+</body>
+</html>
